@@ -7,6 +7,7 @@ function getWeather() {
       .then(response => response.json())
       .then(data => {
         displayWeather(data);
+        displayAdditionalInfo(data);
       })
       .catch(error => console.error('Error al obtener datos:', error));
   }
@@ -20,11 +21,49 @@ function getWeather() {
     const description = data.weather[0].description;
     const iconUrl = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
   
-    weatherResult.innerHTML = `
-      <h2>Clima en ${cityName}</h2>
-      <p>Temperatura: ${temperature} °C</p>
-      <p>Descripción: ${description}</p>
-      <img src="${iconUrl}" alt="Icono de clima">
+    let temperatureMessage = '';
+    if (temperature > 30) {
+      temperatureMessage = '¡Hace calor!';
+    } else if (temperature < 10) {
+      temperatureMessage = 'Hace frío, abrígate.';
+    } else {
+      temperatureMessage = 'La temperatura es moderada.';
+    }
+  
+    const cityInfo = `
+      <div>
+        <h2>Clima en ${cityName}</h2>
+        <p>Temperatura: ${temperature} °C</p>
+        <p>Descripción: ${description}</p>
+        <p>${temperatureMessage}</p>
+        <img src="${iconUrl}" alt="Icono de clima">
+      </div>
     `;
+  
+    weatherResult.innerHTML = cityInfo;
+  }
+  
+  function displayAdditionalInfo(data) {
+    const additionalInfo = document.getElementById('additionalInfo');
+    additionalInfo.style.display = 'block';
+  
+    const humidity = data.main.humidity;
+    const windSpeed = data.wind.speed;
+  
+    let windMessage = '';
+    if (windSpeed > 10) {
+      windMessage = 'Hay viento moderado.';
+    } else {
+      windMessage = 'El viento es suave.';
+    }
+  
+    const additionalInfoContent = `
+      <h3>Información adicional:</h3>
+      <p>Humedad: ${humidity}%</p>
+      <p>Velocidad del viento: ${windSpeed} m/s</p>
+      <p>${windMessage}</p>
+    `;
+  
+    additionalInfo.innerHTML = additionalInfoContent;
   }
   
