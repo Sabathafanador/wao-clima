@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  #app {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #weatherResult {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: none;
+  }
+  
+  #weatherResult img {
+    max-width: 100px;
+  }
+  
