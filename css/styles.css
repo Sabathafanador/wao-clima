@@ -26,3 +26,28 @@ body {
     max-width: 200px;
   }
   
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  body {
+    margin: 10px; /* Reduce el margen en dispositivos móviles */
+  }
+}
+
+/* Estilos para tabletas y pantallas más grandes */
+@media (min-width: 768px) {
+  body {
+    background-size: 100%; /* Ajusta la imagen al tamaño de la ventana */
+  }
+}
+
+/* Estilos para pantallas más grandes (por ejemplo, computadoras de escritorio) */
+@media (min-width: 992px) {
+  #app {
+    margin-top: 100px; /* Ajusta el margen superior para pantallas más grandes */
+  }
+}
+
+
+
+
+
