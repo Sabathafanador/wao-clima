@@ -1,3 +1,4 @@
+
 function getWeather() {
     const cityInput = document.getElementById('cityInput').value;
     const apiKey = '081071e2f0f13e1d34001edc3ca4e301';
@@ -23,9 +24,9 @@ function getWeather() {
   
     let temperatureMessage = '';
     if (temperature > 30) {
-      temperatureMessage = '¡Hace calor!';
+      temperatureMessage = '¡Vas a sudar como pollo!';
     } else if (temperature < 10) {
-      temperatureMessage = 'Hace frío, abrígate.';
+      temperatureMessage = 'Hace frío, ve por tu abrigo!!!.';
     } else {
       temperatureMessage = 'La temperatura es moderada.';
     }

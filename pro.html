@@ -3,22 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wao Clima</title>
-  <link rel="stylesheet" href="styles.css">
+  <title class="wao">Wao Clima</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="./js/script.js"></script>
-
 </head>
 <body>
-  <div id="app">
-    <h1>WAO CLIMA</h1>
-    <div>
-      <label for="cityInput">Ingrese una ciudad:</label>
-      <input type="text" id="cityInput" placeholder="Ej. Buenos Aires">
-      <button onclick="getWeather()">Obtener Clima</button>
-    </div>
-    <div id="weatherResult"></div>
-  </div>
   
+  <div id="app" class="container">
+    <h1 class="mt-5">WAO CLIMA</h1>
+    <div class="mt-4">
+      <label for="cityInput">Ingrese una ciudad:</label>
+      <input type="text" id="cityInput" class="form-control" placeholder="Ej. Caracas">
+      <button onclick="getWeather()" class="btn btn-primary mt-2">Obtener Clima</button>
+    </div>
+    <div id="weatherResult" class="mt-5"></div>
+    <div id="additionalInfo" class="mt-3"></div>
+  </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.min.js"></script>
   <script src="script.js"></script>
 </body>
