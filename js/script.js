@@ -67,4 +67,38 @@ function getWeather() {
   
     additionalInfo.innerHTML = additionalInfoContent;
   }
-  
+  localStorage.setItem('additionalInfoData', JSON.stringify({
+        
+       
+    humidity: data.main.humidity,
+            windSpeed: data.wind.speed
+        }));
+    }
+    
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        
+       
+    const savedWeatherData = localStorage.getItem('weatherData');
+        
+       
+    const savedAdditionalInfoData = localStorage.getItem('additionalInfoData');
+    
+        
+    
+    if (savedWeatherData) {
+            
+           
+    displayWeather(JSON.parse(savedWeatherData));
+        }
+    
+        
+       
+    if (savedAdditionalInfoData) {
+            
+            displayAdditionalInfo
+    
+            display
+    displayAdditionalInfo(JSON.parse(savedAdditionalInfoData));
+        }
+    });
